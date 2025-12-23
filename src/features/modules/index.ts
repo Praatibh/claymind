@@ -1,0 +1,7 @@
+/**
+ * Modules Feature - Barrel Export
+ */
+
+export { Modules } from './screens/ModulesList';
+export { ModuleDetail } from './screens/ModuleDetail';
+
