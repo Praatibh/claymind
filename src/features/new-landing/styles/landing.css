@@ -1,0 +1,257 @@
+/* Landing Page Styles - Claymind AI */
+/* Imported from orchids-claymindai-landing-page */
+/* Note: Google Fonts loaded via <link> tag in LandingPage.tsx */
+
+/* Theme variables for landing page */
+:root {
+  --landing-background: #F1EEE9;
+  --landing-foreground: #000000;
+
+  --landing-card: #F7F4EF;
+  --landing-card-foreground: #000000;
+
+  --landing-popover: #F7F4EF;
+  --landing-popover-foreground: #000000;
+
+  --landing-primary: #FF6B8B;
+  --landing-primary-foreground: #000000;
+
+  --landing-secondary: #4E5FFD;
+  --landing-secondary-foreground: #ffffff;
+
+  --landing-muted: #F7F4EF;
+  --landing-muted-foreground: #808080;
+
+  --landing-accent: #39E17F;
+  --landing-accent-foreground: #000000;
+
+  --landing-destructive: #ef4444;
+  --landing-destructive-foreground: #fafafa;
+
+  --landing-border: #000000;
+  --landing-input: #000000;
+  --landing-ring: #FF6B8B;
+
+  --landing-chart-1: #FF6B8B;
+  --landing-chart-2: #4E5FFD;
+  --landing-chart-3: #39E17F;
+  --landing-chart-4: #FDD5C0;
+  --landing-chart-5: #E4E2F4;
+
+  --landing-section-peach: #FDD5C0;
+  --landing-section-lavender: #E4E2F4;
+  --landing-ui-grey: #F7F4EF;
+
+  --landing-font-display: "Newsreader", serif;
+  --landing-font-sans: "Inter", sans-serif;
+  --landing-font-mono: "Menlo", "Monaco", "Consolas", monospace;
+
+  --shadow-brutal: 6px 6px 0px #000000;
+  --shadow-brutal-sm: 3px 3px 0px #000000;
+}
+
+/* Landing page container */
+.landing-page {
+  background-color: var(--landing-background);
+  color: var(--landing-foreground);
+  font-family: var(--landing-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography overrides for landing */
+.landing-page h1,
+.landing-page h2 {
+  font-family: var(--landing-font-display);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.landing-page h1 {
+  font-size: clamp(3rem, 8vw, 5.25rem);
+  font-style: italic;
+}
+
+.landing-page h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.landing-page h3 {
+  font-family: var(--landing-font-sans);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.landing-page p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Container - scoped to landing page */
+.landing-page .container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* UI Mono Font */
+.font-ui-mono {
+  font-family: var(--landing-font-mono);
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* OS Window Styles */
+.os-window {
+  background: var(--landing-ui-grey);
+  border: 1px solid #000000;
+  box-shadow: var(--shadow-brutal);
+  position: relative;
+}
+
+.os-window-header {
+  height: 32px;
+  border-bottom: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+/* Brutalist Button */
+.brutal-btn {
+  background: var(--landing-primary);
+  border: 2px solid #000000;
+  box-shadow: var(--shadow-brutal);
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: transform 0.1s ease;
+}
+
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px #000000;
+}
+
+/* Dither Overlay Effect */
+.dither-overlay {
+  background-image: radial-gradient(#000000 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
+/* Scanline Effect for Videos */
+.scanline {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 10;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animate-typing {
+  animation: typing 2s steps(40, end);
+}
+
+/* Accordion Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* Section Background Colors */
+.bg-section-peach {
+  background-color: var(--landing-section-peach);
+}
+
+.bg-section-lavender {
+  background-color: var(--landing-section-lavender);
+}
+
+.bg-ui-grey {
+  background-color: var(--landing-ui-grey);
+}
+
+/* Landing page specific overrides */
+.landing-page .navbar_component {
+  background-color: var(--landing-background);
+}
+
+/* Marquee animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Draggable window styles */
+.draggable-window {
+  cursor: grab;
+}
+
+.draggable-window:active {
+  cursor: grabbing;
+}
+
+/* Video container with scanlines */
+.video-scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
